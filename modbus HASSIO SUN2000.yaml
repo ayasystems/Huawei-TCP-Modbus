@@ -1,0 +1,100 @@
+modbus:
+
+  - type: tcp
+    host: 192.168.xx.xx
+    port: 502
+    name: SUN6KTL_"Solar_SUN2000L"
+    sensors:
+      - name: SUN6KtL Rendimiento Diario ## SUN6KTL_daily_yield
+        slave: 0
+        address: 32114
+        unit_of_measurement: kWh
+        data_type: int
+        count: 2
+        scale: 0.01
+        precision: 2
+        scan_interval: 10
+      - name: SUN6KtL Potencia Activa ## SUN6KTL_active_power
+        slave: 0
+        address: 32080
+        unit_of_measurement: W
+        data_type: int
+        count: 2
+        scale: 1
+        precision: 0
+        scan_interval: 10
+      - name: SUN6KtL Entrada de Potencia  ##SUN6KTL_input_power
+        slave: 0
+        address: 32064
+        unit_of_measurement: W
+        data_type: int
+        count: 2
+        scale: 1
+        precision: 0
+        scan_interval: 10
+      - name: SUN6KtL Pico de Potencia Activa ## SUN6KTL_day_active_power_peak
+        slave: 0
+        address: 32078
+        unit_of_measurement: W
+        data_type: int
+        count: 2
+        scale: 1
+        precision: 0
+        scan_interval: 10
+      - name: SUN6KtL Voltaje PV01  ##SUN6KtL SUN6KTL_pv_01_voltage
+        slave: 0
+        address: 32016
+        unit_of_measurement: V
+        data_type: uint16
+        count: 1
+        scale: 0.1
+        precision: 1
+        scan_interval: 10
+      - name: SUN6KtL Corriente PV01  ##SUN6KTL_pv_01_current
+        slave: 0
+        address: 32017
+        unit_of_measurement: A
+        data_type: uint16
+        count: 1
+        scale: 0.01
+        precision: 1
+        scan_interval: 10
+      - name: SUN6KtL Voltaje FaseA   ## SUN6KTL_phase_A_voltage 
+        slave: 0
+        address: 32069
+        unit_of_measurement: V
+        data_type: uint16
+        count: 1
+        scale: 0.1
+        precision: 1
+        scan_interval: 10
+      - name: SUN6KtL Corriente FaseA  ##SUN6KTL_phase_A_current
+        slave: 0
+        address: 32072
+        unit_of_measurement: A
+        data_type: int
+        count: 2
+        scale: 0.001
+        precision: 2
+        scan_interval: 10
+      - name: SUN6KtL Optimizadores Presentes  ##  SUN6KTL_Optimizers
+        slave: 0
+        address: 37200
+        unit_of_measurement: Un
+        data_type: uint16 
+        count: 1
+        scan_interval: 100            
+      - name: SUN6KtL Optimizadores Online  ## SUN6KTL_Online_Optimizers
+        slave: 0
+        address: 37201
+        unit_of_measurement: Un
+        data_type: uint16 
+        count: 1
+        scan_interval: 10    
+      - name: SUN6KtL Status Inversor  ## SUN6KTL_Device_Status
+        slave: 0
+        address: 32089
+        # unit_of_measurement: 
+        data_type: int 
+        count: 1
+        scan_interval: 10   
