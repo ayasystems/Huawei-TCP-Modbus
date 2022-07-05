@@ -1,0 +1,1568 @@
+[
+    {
+        "id": "9319e4e3925516d0",
+        "type": "tab",
+        "label": "Modbus Solar",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cb0fb8dfc053fcd5",
+        "type": "modbus-read",
+        "z": "9319e4e3925516d0",
+        "d": true,
+        "name": "DC_W",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32080 ",
+        "quantity": "1",
+        "rate": "5",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 210,
+        "y": 60,
+        "wires": [
+            [
+                "77e2b2323ed11bf1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a0d12a1a7e86ea20",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "77e2b2323ed11bf1",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint32be",
+                "name": "DC_W",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "a0d12a1a7e86ea20"
+            ]
+        ]
+    },
+    {
+        "id": "0d9ae85a2623a0e3",
+        "type": "modbus-read",
+        "z": "9319e4e3925516d0",
+        "name": "Temperatura Inversor",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32087",
+        "quantity": "1",
+        "rate": "5",
+        "rateUnit": "s",
+        "delayOnStart": true,
+        "startDelayTime": "10",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 267,
+        "y": 248,
+        "wires": [
+            [
+                "67a72dc827f867f8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "67a72dc827f867f8",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int16be",
+                "name": "TEMP",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 477,
+        "y": 248,
+        "wires": [
+            [
+                "5b175553857f762d",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "c1e2d08487aa841d",
+        "type": "mqtt out",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "topic": "domoticz/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "df5df878f384a004",
+        "x": 810,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ec2cbd06fa878936",
+        "type": "modbus-read",
+        "z": "9319e4e3925516d0",
+        "d": true,
+        "name": "POWER",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32106",
+        "quantity": "2",
+        "rate": "5",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "b9ca8eb65fab9020",
+                "a0d12a1a7e86ea20"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b9ca8eb65fab9020",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint32be",
+                "name": "POWER",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "keyvalue",
+        "resultTypeType": "return",
+        "multipleResult": false,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 473,
+        "y": 148,
+        "wires": [
+            [
+                "85d0d07f6ae7df27"
+            ]
+        ]
+    },
+    {
+        "id": "85d0d07f6ae7df27",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "func": "msg.payload.POWER = msg.payload.POWER *10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 120,
+        "wires": [
+            [
+                "a0d12a1a7e86ea20"
+            ]
+        ]
+    },
+    {
+        "id": "5b175553857f762d",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "PV_W",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32080",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 237,
+        "y": 348,
+        "wires": [
+            [
+                "f35cdd863c8b762f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f35cdd863c8b762f",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "PV_W",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 457,
+        "y": 348,
+        "wires": [
+            [
+                "0c454b35f1a2339f",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "0c454b35f1a2339f",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "EFI",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32086",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 237,
+        "y": 468,
+        "wires": [
+            [
+                "ac80cefb7f5be046"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ac80cefb7f5be046",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint16be",
+                "name": "EFI",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.01",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 463,
+        "wires": [
+            [
+                "5cb0c697bd8a6e6b",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "5cb0c697bd8a6e6b",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "FREQ",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32085",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 237,
+        "y": 568,
+        "wires": [
+            [
+                "40590bd09ae1aee3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "40590bd09ae1aee3",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint16be",
+                "name": "FREQ",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.01",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 563,
+        "wires": [
+            [
+                "b440529c95dbf1c0",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "b440529c95dbf1c0",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Producido kwh",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32106",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 267,
+        "y": 648,
+        "wires": [
+            [
+                "8a492292ec1f5b9d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a492292ec1f5b9d",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint32be",
+                "name": "PV_KWH_TOTAL",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.01",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 643,
+        "wires": [
+            [
+                "8053ebdfea574dbe",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "8053ebdfea574dbe",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Meter W",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37113",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 247,
+        "y": 728,
+        "wires": [
+            [
+                "eab5d6e2aba2e6ad"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eab5d6e2aba2e6ad",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "RED_W",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 723,
+        "wires": [
+            [
+                "83df2244fe3becf4",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "ddcee26644fa45e6",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "83df2244fe3becf4",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "IMP KWH",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37121",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 247,
+        "y": 808,
+        "wires": [
+            [
+                "d6f992076c259066"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d6f992076c259066",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "IMP_KWH",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.01",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 457,
+        "y": 808,
+        "wires": [
+            [
+                "6c85c6b63ec41f67",
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "6c85c6b63ec41f67",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "EXP KWH",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37119",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 257,
+        "y": 868,
+        "wires": [
+            [
+                "e4e6cb9c2c4cd642"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e4e6cb9c2c4cd642",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "EXP_KWH",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.01",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 863,
+        "wires": [
+            [
+                "88ef6028bfaec2eb",
+                "32733ac7ad4db192"
+            ]
+        ]
+    },
+    {
+        "id": "88ef6028bfaec2eb",
+        "type": "join",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "16",
+        "count": "15",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 697,
+        "y": 568,
+        "wires": [
+            [
+                "ddcee26644fa45e6",
+                "d2b05a8b6fe84f04",
+                "488d3089e9f24345",
+                "35d2fbc27f5d38fc",
+                "eb8486ceaf2e1327",
+                "3b7cea17e4950399",
+                "c91eeaf8454d940f",
+                "244f91cb853f28d2",
+                "bda6bec0814998cb",
+                "a431631d2038a912",
+                "6f8c9c38b1114fff",
+                "79b9915a1ab5326a",
+                "367d34f9101a503a"
+            ]
+        ]
+    },
+    {
+        "id": "d2b05a8b6fe84f04",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "IMPORTADO",
+        "func": "var acumulado       =   msg.payload.IMP_KWH*1000;\nvar power = msg.payload.RED_W * -1;\n \nmsg.topic = 'IMPORTADO';\nif(power<0){\n    power=0;\n}\n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\n//var idx  = 54;\nvar idx  = 787;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 867,
+        "y": 568,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "fd29652355a177c7",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1237,
+        "y": 668,
+        "wires": []
+    },
+    {
+        "id": "488d3089e9f24345",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "EXPORTADO",
+        "func": "var acumulado       =   msg.payload.EXP_KWH*1000;\nvar power = msg.payload.RED_W;\n \nmsg.topic = 'exportado';\n\nif(power<0){\n    power=0;\n}\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\n//var idx  = 55;\nvar idx  = 786;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 867,
+        "y": 648,
+        "wires": [
+            [
+                "461e8fc15360d0ba",
+                "fc271a99d0d3d402"
+            ]
+        ]
+    },
+    {
+        "id": "2a87b23cf8e9f4a5",
+        "type": "mqtt out",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "topic": "domoticz/in",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "df5df878f384a004",
+        "x": 1357,
+        "y": 368,
+        "wires": []
+    },
+    {
+        "id": "35d2fbc27f5d38fc",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "PRODUCCIÓN",
+        "func": "var acumulado       =   msg.payload.PV_KWH_TOTAL*1000;\nvar power_pro = msg.payload.PV_W;\n\nvar power_bat = msg.payload.batuso * -1;\n\nmsg.topic = 'PRODUCCIÓN';\n\n\nif(power_bat<0){\n    var power = power_pro + ( power_bat * -1 ) ;\n}else{\n    var power = power_pro ;\n}\n\nif(power<0){\n    power=0;\n}\n\nvar svalue = power + \";\" + acumulado;\n\nvar idx  = 785;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 867,
+        "y": 728,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "eb8486ceaf2e1327",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "TEMPERATURA_INVERSOR",
+        "func": " \nlet value  = msg.payload.TEMP ;\n \nmsg.topic = 'TEMPERATURA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \n//var idx  = 52;\nvar idx  = 791;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "a3e587eeed0c3743",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "461e8fc15360d0ba",
+        "type": "rbe",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.svalue",
+        "topi": "topic",
+        "x": 1177,
+        "y": 508,
+        "wires": [
+            [
+                "2a87b23cf8e9f4a5",
+                "73691a191bd04fc5"
+            ]
+        ]
+    },
+    {
+        "id": "3b7cea17e4950399",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "FREQ",
+        "func": " \nlet value  = msg.payload.FREQ ;\n \nmsg.topic = 'FRECUENCIA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \n//var idx  = 58;\nvar idx  = 790;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "32733ac7ad4db192",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "VOLTAJE",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37101",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 240,
+        "y": 940,
+        "wires": [
+            [
+                "2362b53c977a1166"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2362b53c977a1166",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "VOLT",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 943,
+        "wires": [
+            [
+                "88ef6028bfaec2eb",
+                "7100d98dc8fa4b8f"
+            ]
+        ]
+    },
+    {
+        "id": "c91eeaf8454d940f",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "VOLT",
+        "func": " \nlet value  = msg.payload.VOLT ;\n \nmsg.topic = 'VOLT';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \n//var idx  = 59;\nvar idx  = 792;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 400,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "244f91cb853f28d2",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "EFICIENCIA",
+        "func": " \nlet value  = msg.payload.EFI ;\n \nmsg.topic = 'EFICIENCIA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \n//var idx  = 60;\nvar idx  = 793;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "461e8fc15360d0ba",
+                "fd29652355a177c7"
+            ]
+        ]
+    },
+    {
+        "id": "fc271a99d0d3d402",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1127,
+        "y": 788,
+        "wires": []
+    },
+    {
+        "id": "73691a191bd04fc5",
+        "type": "debug",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1337,
+        "y": 588,
+        "wires": []
+    },
+    {
+        "id": "7100d98dc8fa4b8f",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Battery",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37004",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 240,
+        "y": 1020,
+        "wires": [
+            [
+                "4ee8829e26055093"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4ee8829e26055093",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint16be",
+                "name": "batt",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 1020,
+        "wires": [
+            [
+                "88ef6028bfaec2eb",
+                "0fb1536907df8b5a"
+            ]
+        ]
+    },
+    {
+        "id": "bda6bec0814998cb",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Battería",
+        "func": "let value = msg.payload.batt /10 ;\n \nmsg.topic = 'Batería';\n\n//var svalue = power  + \";\";\nvar idx  = 797;\nmsg.payload = {};\nmsg.payload.idx = idx;\n//msg.payload.svalue = svalue;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 820,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "a431631d2038a912",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Consumo",
+        "func": "var acumulado_pro       =   msg.payload.PV_KWH_TOTAL*1000;\nvar power_pro = msg.payload.PV_W;\n\nvar acumulado_exp       =   msg.payload.EXP_KWH*1000;\nvar power_exp = msg.payload.RED_W;\n\nvar acumulado_imp       =   msg.payload.IMP_KWH*1000;\nvar power_imp = msg.payload.RED_W * -1;\n\nvar power_bat = msg.payload.batuso * -1;\n\nvar power;\n\nif(power_imp>0){\n    if(power_bat<0){\n        power = power_pro - power_exp + power_imp ;\n    }else{\n        power = power_pro - power_exp + power_imp + power_bat;\n    }\n}else{\n    if(power_bat<0){\n        power = power_pro - power_exp ;\n    }else{\n        power = power_pro - power_exp + power_bat;\n    }\n}\nvar acumulado = acumulado_pro - acumulado_exp + acumulado_imp;\n\nmsg.topic = 'Consumo';\n\nvar svalue = power + \";\" + acumulado;\nvar idx  = 795;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 920,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "0fb1536907df8b5a",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Status",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32089",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 230,
+        "y": 1100,
+        "wires": [
+            [
+                "27d235e708684ac6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "27d235e708684ac6",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint16be",
+                "name": "stat",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 1100,
+        "wires": [
+            [
+                "88ef6028bfaec2eb",
+                "b52ae97c2d52a5a3"
+            ]
+        ]
+    },
+    {
+        "id": "6f8c9c38b1114fff",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Status",
+        "func": " \nlet value  = msg.payload.stat ;\n \nmsg.topic = 'Estado';\n \n//var idx  = 52;\nvar idx  = 796;\nmsg.payload = {};\nmsg.payload.idx = idx;\n\nif(parseInt(value.toFixed(2))==0) {\n    msg.payload.svalue = 'Inicializando';\n}else if(parseInt(value.toFixed(2))==1) {\n    msg.payload.svalue = 'Detectando aislamiento';\n}else if(parseInt(value.toFixed(2))==2) {\n    msg.payload.svalue = 'Detectando irradiación';\n}else if(parseInt(value.toFixed(2))==3) {\n    msg.payload.svalue = 'Detectando drid';\n}else if(parseInt(value.toFixed(2))==256) {\n    msg.payload.svalue = 'Iniciando';\n}else if(parseInt(value.toFixed(2))==512) {\n    msg.payload.svalue = 'En Red';\n}else if(parseInt(value.toFixed(2))==513) {\n    msg.payload.svalue = 'Potencia limitada';\n}else if(parseInt(value.toFixed(2))==514) {\n    msg.payload.svalue = 'Auto-Reducción Fuera de la red.';\n}else if(parseInt(value.toFixed(2))==515) {\n    msg.payload.svalue = 'Fuera de la red';\n}else if(parseInt(value.toFixed(2))==768) {\n    msg.payload.svalue = 'Apagado Fallo';\n}else if(parseInt(value.toFixed(2))==769) {\n    msg.payload.svalue = 'Cerrado dominio';\n}else if(parseInt(value.toFixed(2))==770) {\n    msg.payload.svalue = 'Cerrado OVGR';\n}else if(parseInt(value.toFixed(2))==771) {\n    msg.payload.svalue = 'Cerrado Comuniacción desconectado';\n}else if(parseInt(value.toFixed(2))==772) {\n    msg.payload.svalue = 'Cerrado potencia limitada';\n}else if(parseInt(value.toFixed(2))==773) {\n    msg.payload.svalue = 'Requerida puesta en marcha manual';\n}else if(parseInt(value.toFixed(2))==774) {\n    msg.payload.svalue = 'Apagado CC Interruptores desconectados';\n}else if(parseInt(value.toFixed(2))==775) {\n    msg.payload.svalue = 'Apagado rápido Corte';\n}else if(parseInt(value.toFixed(2))==776) {\n    msg.payload.svalue = 'Apagado baja potencia de entrada';\n}else if(parseInt(value.toFixed(2))==1025) {\n    msg.payload.svalue = 'Cuadrícula Planificación';\n}else if(parseInt(value.toFixed(2))==1026) {\n    msg.payload.svalue = 'Cuadrícula Programación Q-U';\n}else if(parseInt(value.toFixed(2))==1027) {\n    msg.payload.svalue = 'Cuadrícula Programación PF-U';\n}else if(parseInt(value.toFixed(2))==1028) {\n    msg.payload.svalue = 'Cuadrícula Programación Contacto Seco';\n}else if(parseInt(value.toFixed(2))==1029) {\n    msg.payload.svalue = 'Cuadrícula Programación Q-P';\n}else if(parseInt(value.toFixed(2))==1280) {\n    msg.payload.svalue = 'Spot-Chequeo Listo';\n}else if(parseInt(value.toFixed(2))==1281) {\n    msg.payload.svalue = 'Punto de comprobación';\n}else if(parseInt(value.toFixed(2))==1536) {\n    msg.payload.svalue = 'Inspeccionando';\n}else if(parseInt(value.toFixed(2))==1792) {\n    msg.payload.svalue = 'AFCI Autocomprobación ';\n}else if(parseInt(value.toFixed(2))==2048) {\n    msg.payload.svalue = 'I-V Escaneo';\n}else if(parseInt(value.toFixed(2))==2304) {\n    msg.payload.svalue = 'Detección de entrada de CC';\n}else if(parseInt(value.toFixed(2))==2560) {\n    msg.payload.svalue = 'Carga fuera de la red';\n}else if(parseInt(value.toFixed(2))==40960) {\n    msg.payload.svalue = 'En espera sin irradiación';\n}else{\n    msg.payload.svalue = value.toFixed(2);\n}\n\nmsg.payload.nvalue =  0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 1020,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "b52ae97c2d52a5a3",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Battery Uso",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37001",
+        "quantity": "2",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 250,
+        "y": 1180,
+        "wires": [
+            [
+                "e07acbec127b5986"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e07acbec127b5986",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int32be",
+                "name": "batuso",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 1180,
+        "wires": [
+            [
+                "88ef6028bfaec2eb",
+                "7c98caf7b0a167df"
+            ]
+        ]
+    },
+    {
+        "id": "79b9915a1ab5326a",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Uso batería",
+        "func": "var power = msg.payload.batuso * -1;\n \nmsg.topic = 'Uso batería';\n\nvar svalue = power + \";\";\nvar idx  = 798;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 1120,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "7c98caf7b0a167df",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "Temperatura Battery",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "37022",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 260,
+        "y": 1260,
+        "wires": [
+            [
+                "c28151de2c93998f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c28151de2c93998f",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "int16be",
+                "name": "tempbat",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "0.1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 1260,
+        "wires": [
+            [
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "367d34f9101a503a",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Temperatura battery",
+        "func": " \nlet value  = msg.payload.tempbat ;\n \nmsg.topic = 'Temperatura battery';\n \n\n\nvar idx  = 799;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1220,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "beb129d2822f4a36",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": false,
+        "stateLogEnabled": true,
+        "queueLogEnabled": false,
+        "tcpHost": "192.168.2.151",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": false
+    },
+    {
+        "id": "df5df878f384a004",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.2.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
