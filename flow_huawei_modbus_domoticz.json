@@ -118,7 +118,7 @@
         "ioFile": "",
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
-        "x": 210,
+        "x": 190,
         "y": 280,
         "wires": [
             [
@@ -161,7 +161,7 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 470,
+        "x": 450,
         "y": 280,
         "wires": [
             [
@@ -300,8 +300,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 230,
-        "y": 380,
+        "x": 190,
+        "y": 340,
         "wires": [
             [
                 "f35cdd863c8b762f"
@@ -344,7 +344,7 @@
         "setTopic": true,
         "outputs": 1,
         "x": 450,
-        "y": 380,
+        "y": 340,
         "wires": [
             [
                 "0c454b35f1a2339f",
@@ -370,8 +370,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 230,
-        "y": 500,
+        "x": 190,
+        "y": 400,
         "wires": [
             [
                 "ac80cefb7f5be046"
@@ -413,8 +413,8 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 495,
+        "x": 450,
+        "y": 400,
         "wires": [
             [
                 "5cb0c697bd8a6e6b",
@@ -440,8 +440,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 230,
-        "y": 600,
+        "x": 190,
+        "y": 460,
         "wires": [
             [
                 "40590bd09ae1aee3"
@@ -483,8 +483,8 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 595,
+        "x": 450,
+        "y": 460,
         "wires": [
             [
                 "b440529c95dbf1c0",
@@ -510,8 +510,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 260,
-        "y": 680,
+        "x": 220,
+        "y": 520,
         "wires": [
             [
                 "8a492292ec1f5b9d"
@@ -553,8 +553,8 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 675,
+        "x": 450,
+        "y": 520,
         "wires": [
             [
                 "8053ebdfea574dbe",
@@ -580,8 +580,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 240,
-        "y": 760,
+        "x": 200,
+        "y": 580,
         "wires": [
             [
                 "eab5d6e2aba2e6ad"
@@ -623,31 +623,14 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 755,
+        "x": 450,
+        "y": 580,
         "wires": [
             [
                 "83df2244fe3becf4",
                 "88ef6028bfaec2eb"
             ]
         ]
-    },
-    {
-        "id": "ddcee26644fa45e6",
-        "type": "debug",
-        "z": "9319e4e3925516d0",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 860,
-        "wires": []
     },
     {
         "id": "83df2244fe3becf4",
@@ -667,8 +650,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 240,
-        "y": 840,
+        "x": 200,
+        "y": 640,
         "wires": [
             [
                 "d6f992076c259066"
@@ -711,7 +694,7 @@
         "setTopic": true,
         "outputs": 1,
         "x": 450,
-        "y": 840,
+        "y": 640,
         "wires": [
             [
                 "6c85c6b63ec41f67",
@@ -737,8 +720,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 250,
-        "y": 900,
+        "x": 210,
+        "y": 700,
         "wires": [
             [
                 "e4e6cb9c2c4cd642"
@@ -780,8 +763,8 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 895,
+        "x": 450,
+        "y": 700,
         "wires": [
             [
                 "88ef6028bfaec2eb",
@@ -802,25 +785,18 @@
         "joiner": "\\n",
         "joinerType": "str",
         "accumulate": false,
-        "timeout": "10",
-        "count": "9",
+        "timeout": "11",
+        "count": "10",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 690,
+        "x": 670,
         "y": 600,
         "wires": [
             [
-                "ddcee26644fa45e6",
-                "d2b05a8b6fe84f04",
-                "488d3089e9f24345",
-                "35d2fbc27f5d38fc",
-                "eb8486ceaf2e1327",
-                "3b7cea17e4950399",
-                "c91eeaf8454d940f",
-                "244f91cb853f28d2"
+                "5d10dfb40c484ee1"
             ]
         ]
     },
@@ -829,14 +805,14 @@
         "type": "function",
         "z": "9319e4e3925516d0",
         "name": "IMPORTADO",
-        "func": "var acumulado       =   msg.payload.IMP_KWH*1000;\nvar power = msg.payload.RED_W * -1;\n \nmsg.topic = 'IMPORTADO';\nif(power<0){\n    power=0;\n}\n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 54;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "func": "var acumulado       =   msg.payload.IMP_KWH*1000;\nvar power = msg.payload.RED_W * -1;\n \nmsg.topic = 'IMPORTADO';\nif(power<0){\n    power=0;\n}\n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 54;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n\n \nif(acumulado==0){\n    return false;\n}else{\n    return msg;    \n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 600,
+        "x": 940,
+        "y": 580,
         "wires": [
             [
                 "461e8fc15360d0ba"
@@ -864,18 +840,17 @@
         "type": "function",
         "z": "9319e4e3925516d0",
         "name": "EXPORTADO",
-        "func": "var acumulado       =   msg.payload.EXP_KWH*1000;\nvar power = msg.payload.RED_W;\n \nmsg.topic = 'exportado';\n\nif(power<0){\n    power=0;\n}\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 55;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "func": "var acumulado       =   msg.payload.EXP_KWH*1000;\nvar power = msg.payload.RED_W;\n \nmsg.topic = 'exportado';\n\nif(power<0){\n    power=0;\n}\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 55;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n\n \nif(acumulado==0){\n    return false;\n}else{\n    return msg;    \n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 680,
+        "x": 940,
+        "y": 620,
         "wires": [
             [
-                "461e8fc15360d0ba",
-                "fc271a99d0d3d402"
+                "461e8fc15360d0ba"
             ]
         ]
     },
@@ -902,14 +877,14 @@
         "type": "function",
         "z": "9319e4e3925516d0",
         "name": "PRODUCCIÓN",
-        "func": "var acumulado       =   msg.payload.PV_KWH_TOTAL*1000;\nvar power = msg.payload.PV_W;\n \nmsg.topic = 'PRODUCCIÓN';\n\nif(power<0){\n    power=0;\n}\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 57;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "func": "var acumulado       =   msg.payload.PV_KWH_TOTAL*1000;\nvar power = msg.payload.PV_W;\n \nmsg.topic = 'PRODUCCIÓN';\n\nif(power<0){\n    power=0;\n}\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 57;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nif(acumulado==0){\n    return false;\n}else{\n    return msg;    \n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 760,
+        "x": 940,
+        "y": 660,
         "wires": [
             [
                 "461e8fc15360d0ba"
@@ -921,7 +896,7 @@
         "type": "function",
         "z": "9319e4e3925516d0",
         "name": "TEMPERATURA_INVERSOR",
-        "func": " \nlet value  = msg.payload.TEMP ;\n \nmsg.topic = 'TEMPERATURA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \nvar idx  = 52;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}\nreturn msg;",
+        "func": " \nlet value  = msg.payload.TEMP ;\n \nmsg.topic = 'TEMPERATURA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \nvar idx  = 52;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}\n ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1009,8 +984,8 @@
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
         "keepMsgProperties": false,
-        "x": 240,
-        "y": 980,
+        "x": 200,
+        "y": 760,
         "wires": [
             [
                 "2362b53c977a1166"
@@ -1052,11 +1027,12 @@
         "fanOutMultipleResult": false,
         "setTopic": true,
         "outputs": 1,
-        "x": 443,
-        "y": 975,
+        "x": 450,
+        "y": 760,
         "wires": [
             [
-                "88ef6028bfaec2eb"
+                "88ef6028bfaec2eb",
+                "186ded574ad7eacf"
             ]
         ]
     },
@@ -1084,7 +1060,7 @@
         "type": "function",
         "z": "9319e4e3925516d0",
         "name": "EFICIENCIA",
-        "func": " \nlet value  = msg.payload.EFI ;\n \nmsg.topic = 'EFICIENCIA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \nvar idx  = 60;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\n \nreturn msg;",
+        "func": " \nlet value  = msg.payload.EFI ;\n \nmsg.topic = 'EFICIENCIA';\n \n\n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\n \nvar idx  = 60;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = value.toFixed(2);\nmsg.payload.nvalue =  0;\n\n \nif(parseInt(msg.payload.svalue)==0) {\n    return false;\n}else{\n    return msg;\n}\n ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1104,15 +1080,15 @@
         "type": "debug",
         "z": "9319e4e3925516d0",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
-        "y": 820,
+        "x": 1110,
+        "y": 960,
         "wires": []
     },
     {
@@ -1130,6 +1106,140 @@
         "x": 1320,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "186ded574ad7eacf",
+        "type": "modbus-getter",
+        "z": "9319e4e3925516d0",
+        "name": "STATUS",
+        "showStatusActivities": true,
+        "showErrors": true,
+        "logIOActivities": false,
+        "unitid": "0",
+        "dataType": "HoldingRegister",
+        "adr": "32089",
+        "quantity": "1",
+        "server": "beb129d2822f4a36",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 200,
+        "y": 820,
+        "wires": [
+            [
+                "2dc0e2095ecfc5ae"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2dc0e2095ecfc5ae",
+        "type": "buffer-parser",
+        "z": "9319e4e3925516d0",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "type": "uint16be",
+                "name": "STATUS_INT",
+                "offset": 0,
+                "length": 1,
+                "offsetbit": 0,
+                "scale": "1",
+                "mask": ""
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "resultType": "value",
+        "resultTypeType": "return",
+        "multipleResult": true,
+        "fanOutMultipleResult": false,
+        "setTopic": true,
+        "outputs": 1,
+        "x": 450,
+        "y": 820,
+        "wires": [
+            [
+                "7af3fe6466bbc12d"
+            ]
+        ]
+    },
+    {
+        "id": "7af3fe6466bbc12d",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Translate",
+        "func": "let value  = parseInt(msg.payload) ;\nmsg.topic = 'ESTADO';\n \nmsg.payload = {};\n \nif (value==0) {\n    msg.payload = 'Inicializando';\n}else if (value==1) {\n    msg.payload = 'Detectando aislamiento';\n}else if (value==2) {\n    msg.payload = 'Detectando irradiación';\n}else if (value==3) {\n    msg.payload = 'Detectando drid';\n}else if (value==256) {\n    msg.payload = 'Iniciando';\n}else if (value==512) {\n    msg.payload = 'En Red';\n}else if (value==513) {\n    msg.payload = 'Potencia limitada';\n}else if (value==514) {\n    msg.payload = 'Auto-Reducción Fuera de la red.';\n}else if (value==515) {\n    msg.payload = 'Fuera de la red';\n}else if (value==768) {\n    msg.payload = 'Apagado Fallo';\n}else if (value==769) {\n    msg.payload = 'Cerrado dominio';\n}else if (value==770) {\n    msg.payload = 'Cerrado OVGR';\n}else if (value==771) {\n    msg.payload = 'Cerrado Comuniacción desconectado';\n}else if (value==772) {\n    msg.payload = 'Cerrado potencia limitada';\n}else if (value==773) {\n    msg.payload = 'Requerida puesta en marcha manual';\n}else if (value==774) {\n    msg.payload = 'Apagado CC Interruptores desconectados';\n}else if (value==775) {\n    msg.payload = 'Apagado rápido Corte';\n}else if (value==776) {\n    msg.payload = 'Apagado baja potencia de entrada';\n}else if (value==1025) {\n    msg.payload = 'Cuadrícula Planificación';\n}else if (value==1026) {\n    msg.payload = 'Cuadrícula Programación Q-U';\n}else if (value==1027) {\n    msg.payload = 'Cuadrícula Programación PF-U';\n}else if (value==1028) {\n    msg.payload = 'Cuadrícula Programación Contacto Seco';\n}else if (value==1029) {\n    msg.payload = 'Cuadrícula Programación Q-P';\n}else if (value==1280) {\n    msg.payload = 'Spot-Chequeo Listo';\n}else if (value==1281) {\n    msg.payload = 'Punto de comprobación';\n}else if (value==1536) {\n    msg.payload = 'Inspeccionando';\n}else if (value==1792) {\n    msg.payload = 'AFCI Autocomprobación ';\n}else if (value==2048) {\n    msg.payload = 'I-V Escaneo';\n}else if (value==2304) {\n    msg.payload = 'Detección de entrada de CC';\n}else if (value==2560) {\n    msg.payload = 'Carga fuera de la red';\n}else if (value==40960) {\n    msg.payload = 'En espera sin irradiación';\n}else{\n    msg.payload = value.toFixed(2);\n}\n\n \n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 800,
+        "wires": [
+            [
+                "88ef6028bfaec2eb"
+            ]
+        ]
+    },
+    {
+        "id": "5d10dfb40c484ee1",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "Otras operaciones",
+        "func": "\n\nmsg.payload.CASA_W = msg.payload.PV_W +\n                     ( msg.payload.RED_W * -1);\n                     \nmsg.payload.CASA_KWH = msg.payload.PV_KWH_TOTAL +\n                      msg.payload.IMP_KWH -\n                      msg.payload.EXP_KWH ;\n                      \n                      \n                      \nmsg.payload.CASA_KWH  =  Number(msg.payload.CASA_KWH.toFixed(2));\nmsg.payload.VOLT      =  Number(msg.payload.VOLT.toFixed(2));\nmsg.payload.EFI       =  Number(msg.payload.EFI.toFixed(2));\nmsg.payload.FREQ      =  Number(msg.payload.FREQ.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 640,
+        "wires": [
+            [
+                "fc271a99d0d3d402",
+                "eb8486ceaf2e1327",
+                "3b7cea17e4950399",
+                "c91eeaf8454d940f",
+                "244f91cb853f28d2",
+                "d2b05a8b6fe84f04",
+                "488d3089e9f24345",
+                "35d2fbc27f5d38fc",
+                "dd57433009931a92"
+            ]
+        ]
+    },
+    {
+        "id": "dd57433009931a92",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "CASA",
+        "func": "var acumulado       =   msg.payload.CASA_KWH*1000;\nvar power = msg.payload.CASA_W;\n \nmsg.topic = 'CASA';\n\n \n\n//{\"idx\":236,\"nvalue\":0,\"svalue\":\"1;276293.9\",\"Battery\":200,\"RSSI\":10}\nvar svalue = power + \";\"+acumulado;\nvar idx  = 72;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = svalue;\nmsg.payload.nvalue =  0;\n\n \nif(acumulado==0){\n    return false;\n}else{\n    return msg;    \n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 700,
+        "wires": [
+            [
+                "461e8fc15360d0ba"
+            ]
+        ]
     },
     {
         "id": "beb129d2822f4a36",
