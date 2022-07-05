@@ -1087,8 +1087,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1110,
-        "y": 960,
+        "x": 850,
+        "y": 980,
         "wires": []
     },
     {
@@ -1210,7 +1210,6 @@
         "y": 640,
         "wires": [
             [
-                "fc271a99d0d3d402",
                 "eb8486ceaf2e1327",
                 "3b7cea17e4950399",
                 "c91eeaf8454d940f",
@@ -1218,7 +1217,8 @@
                 "d2b05a8b6fe84f04",
                 "488d3089e9f24345",
                 "35d2fbc27f5d38fc",
-                "dd57433009931a92"
+                "dd57433009931a92",
+                "3b0676b872792a59"
             ]
         ]
     },
@@ -1237,6 +1237,26 @@
         "y": 700,
         "wires": [
             [
+                "461e8fc15360d0ba"
+            ]
+        ]
+    },
+    {
+        "id": "3b0676b872792a59",
+        "type": "function",
+        "z": "9319e4e3925516d0",
+        "name": "EstadoInversor",
+        "func": "var message       =   msg.payload.ESTADO;\n \n \nmsg.topic = 'EstadoInversor';\n\n \n\n \nvar idx  = 73;\nmsg.payload = {};\nmsg.payload.idx = idx;\nmsg.payload.svalue = message;\nmsg.payload.command = \"udevice\";\n \n \n  \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 760,
+        "wires": [
+            [
+                "fc271a99d0d3d402",
                 "461e8fc15360d0ba"
             ]
         ]
